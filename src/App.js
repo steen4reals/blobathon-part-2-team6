@@ -30,17 +30,22 @@ function App() {
 
   return (
     <div className="App">
-      <Button children ={"click for more cuteness"} onClick ={FetchTheApi}/>
-      <NumberInput max={5} min={1} variant={"small"} onInput={handleInput}/>
-      {dogUrl.map((dog)=>{
-        return(
+      <div className ="App-header"> 
+      <h1>Welcome to Cuteness Overload</h1>
+      <NumberInput max={5} min={1} variant={"small"} onInput={handleInput} />
+      <br />
+      <Button children={"click for more cuteness"} onClick={FetchTheApi} />
+      <br />
+      {dogUrl.map((dog) => {
+        return (
           <li>
-           <img src={dog} alt="cute dog"/>
+            <img src={dog} alt="cute dog" />
           </li>
-          )
+        );
       })}
-      <h1>Rate the Cuteness</h1>
-      <StarRating/>
+      <h2>Rate the Cuteness</h2>
+      <StarRating className="Rating" />
+      </div>
     </div>
   );
 }
