@@ -20,7 +20,14 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+}
 
+.row-dogs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  max-width: 80%;
 }
 
 .App-link {
@@ -36,29 +43,27 @@
   }
 }
 
-h1{
-font-family: Arial, Helvetica, sans-serif;
-font-size: 80px
-
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 80px;
 }
 
-h2{
+h2 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 50px;
+  margin-top: 10px;
+  margin-bottom: none;
 }
 
-img{
-max-height:400px;
-max-width: 400px;
-
+img {
+  max-height: 400px;
+  max-width: 400px;
 }
 li {
   list-style: none;
 }
 
-.Rating{
-  position:relative; 
-  left:80px; 
-  top:2px;
-
-}
+/* StarRating {
+  margin-bottom: 10px;
+  width: 200px;
+} */
