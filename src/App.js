@@ -4,14 +4,14 @@ import { useEffect, useState } from "react";
 
 import { Button, StarRating, NumberInput } from "blob-components";
 
-const DOG_API = "https://dog.ceo/api/breeds/image/random";
+import corgi from './corgiImage.jpeg'
 
 function App() {
   const [dogUrl, setDogUrl] = useState([]);
   const [input, setInput] = useState(1);
 
   async function FetchTheApi(input) {
-    let result = await fetch(`${DOG_API}/${input}`);
+    let result = await fetch(`${process.env.REACT_APP_URL}/${input}`);
     let data = await result.json();
     console.log("sdgfsgs");
     console.log(input);
@@ -31,8 +31,11 @@ function App() {
   return (
     <div className="App">
       <div className="App-header">
-        <h1>Welcome to Cuteness Overload</h1>
-        <NumberInput max={5} min={1} variant={"small"} onInput={handleInput} />
+        <div className = 'container'>
+          <h1>Welcome to Cuteness Overload</h1>
+        <img src = {corgi} className ='corgi'/>
+        </div>
+        <NumberInput label = 'How much cuteness can you handle?' max={5} min={1} variant={"small"} onInput={handleInput} />
         <br />
         <Button children={"click for more cuteness"} onClick={FetchTheApi} />
         <br />
